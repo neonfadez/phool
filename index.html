@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Play With Me?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Game/Initial View -->
+    <div id="gameView" class="game-view">
+        <div class="particles-container" id="particlesContainer"></div>
+        
+        <!-- Start Screen -->
+        <div id="startScreen" class="start-screen">
+            <div class="game-content">
+                <h1 class="game-title">🐦 Flappy Heart 🐦</h1>
+                <p class="game-subtitle">Click or press SPACE to fly!</p>
+                <p class="game-hint">Avoid the obstacles and keep flying...</p>
+                <button id="startButton" class="start-button">
+                    <span class="button-text">Start Game</span>
+                    <span class="button-heart">💖</span>
+                </button>
+                <div class="attempts-counter">
+                    <p>Attempts: <span id="attemptCount">0</span> / 3</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Canvas -->
+        <div id="gameScreen" class="game-screen hidden">
+            <canvas id="gameCanvas"></canvas>
+            <div class="game-ui">
+                <div class="score">Score: <span id="score">0</span></div>
+            </div>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="gameOverScreen" class="game-over-screen hidden">
+            <div class="game-over-content">
+                <h2>💔 Game Over 💔</h2>
+                <p class="final-score">Final Score: <span id="finalScore">0</span></p>
+                <p class="attempts-left">Attempts remaining: <span id="attemptsLeft">3</span></p>
+                <button id="restartButton" class="restart-button">Try Again</button>
+            </div>
+        </div>
+
+        <!-- Confirmation Dialog -->
+        <div id="confirmationDialog" class="confirmation-dialog hidden">
+            <div class="confirmation-content">
+                <h3 id="confirmationMessage" class="confirmation-message"></h3>
+                <div class="confirmation-buttons">
+                    <button id="confirmYes" class="confirm-button yes-button">Yes</button>
+                    <button id="confirmNo" class="confirm-button no-button">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Proposal Reveal Section -->
+    <div id="proposalView" class="proposal-view hidden">
+        <div class="stars-background"></div>
+        <div class="animated-hearts" id="animatedHearts"></div>
+        <div class="falling-petals" id="fallingPetals"></div>
+        <div class="sparkles" id="sparkles"></div>
+        
+        <div class="proposal-container">
+            <div class="proposal-content">
+                <h2 class="proposal-title">A Letter From My Heart</h2>
+                <div class="proposal-text" id="proposalText">
+                    <p class="typing-line" data-text="I'm writing this because my heart won't shut up, and ignoring it feels worse than being honest."></p>
+                    <p class="typing-line" data-text="The first time I saw you on the school bus, something shifted. Not loudly. Just enough to notice. Everything felt softer around you. You looked calm, grounded, real in a way that caught me off guard. It felt strange, like recognizing someone before you've ever spoken to them. That moment stayed with me. I didn't try to hold onto it. It just stayed."></p>
+                    <p class="typing-line" data-text="I'm not someone who walks up easily. I'm quiet by nature. Confidence doesn't always show up when I want it to. Still, I found myself looking for you without even knowing your name. Just hoping I'd get a chance somehow. So when you appeared on my Instagram suggestions, right at the top, it stopped me. It didn't feel random. Some things don't need logic to feel right."></p>
+                    <p class="typing-line" data-text="Here's the thing. I don't do halfway. I don't chase moments or temporary comfort. When I care, I stay. I fix what can be fixed. I choose the same person even when it gets uncomfortable. I feel deeply. Sometimes that costs me. But it's only because I care for real. When I choose someone, I don't do it lightly."></p>
+                    <p class="typing-line" data-text="I don't just want the version of you that smiles. I want the quiet days, the tired nights, the parts of you that don't explain themselves. I want to be the person you choose when things feel heavy and words don't come easily. I'm not trying to rush this. I'm just scared of waiting so long that I lose something that already feels rare."></p>
+                    <p class="typing-line" data-text="Even small things pull me back to you. Our music taste, for one. I picture us sharing one pair of earphones, replaying the same song until it stops being just a song and starts meaning something. And maybe one day, when life feels too loud for you, I'd sit beside you and sing softly. Not to impress you. Just to remind you you're not alone."></p>
+                    <p class="typing-line" data-text="I like you as you are. No expectations. No pressure. No need for you to change a thing. You've messed with my sense of time. I've always believed in moving slowly, but with you it doesn't feel forced or rushed. It just feels natural."></p>
+                    <p class="typing-line" data-text="And if you'd let me, I'd care for you quietly. Consistently. The way the moon stays with the night. I'd choose you on your good days and your broken ones. In silence and in chaos. Not loudly. Not dramatically. Just in a way that lasts."></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="backgroundMusic" loop>
+        <source src="romantic-music.mp3" type="audio/mpeg">
+        <!-- Note: Add your own romantic background music file named 'romantic-music.mp3' -->
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
